@@ -8,14 +8,14 @@ import Flagship
 
 // Starting the SDK
 Flagship.sharedInstance.start(envId:{{ENV_ID}}, apiKey:{{API_KEY}}, visitorId: "YOUR_VISITOR_ID"){ (result) in
-
+    
     if result == .Ready {
-
+        
         /// Flagship is ready
-
-    }else{
-
+        
+    } else {
+        
         /// An error occurs or the SDK is disabled
     }
-
+    
 }
