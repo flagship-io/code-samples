@@ -6,12 +6,10 @@
 import React from 'react';
 import { FlagshipProvider } from '@flagship.io/react-native-sdk';
 
-// Enable logs
-var enableLogs = true;
-
 const App = () => (
   <>
     <FlagshipProvider
+      enableConsoleLogs
       envId='{{ENV_ID}}'
       apiKey='{{API_KEY}}'
       visitorData={{
@@ -20,7 +18,6 @@ const App = () => (
           // some context
         },
       }}
-      enableConsoleLogs={enableLogs}
     >
       {/* [...] */}
     </FlagshipProvider>
