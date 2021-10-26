@@ -3,8 +3,8 @@
 //////////////////////////////
 
 // Initialize the provider
-import React from "react";
-import { FlagshipProvider } from "@flagship.io/react-native-sdk";
+import React from 'react';
+import { FlagshipProvider } from '@flagship.io/react-native-sdk';
 
 // Enable logs
 var enableLogs = true;
@@ -12,10 +12,10 @@ var enableLogs = true;
 const App = () => (
   <>
     <FlagshipProvider
-      envId="{{ENV_ID}}"
-      apiKey="{{API_KEY}}"
+      envId='{{ENV_ID}}'
+      apiKey='{{API_KEY}}'
       visitorData={{
-        id: "YOUR_VISITOR_ID",
+        id: 'YOUR_VISITOR_ID',
         context: {
           // some context
         },
