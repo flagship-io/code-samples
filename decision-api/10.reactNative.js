@@ -2,9 +2,12 @@
 /////// Start Flagship ///////
 //////////////////////////////
 
-// - Initialize the provider
+// Initialize the provider
 import React from "react";
 import { FlagshipProvider } from "@flagship.io/react-native-sdk";
+
+// Enable logs
+var enableLogs = true;
 
 const App = () => (
   <>
@@ -17,7 +20,7 @@ const App = () => (
           // some context
         },
       }}
-      enableConsoleLogs={true}
+      enableConsoleLogs={enableLogs}
     >
       {/* [...] */}
     </FlagshipProvider>
