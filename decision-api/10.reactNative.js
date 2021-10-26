@@ -9,15 +9,15 @@ import { FlagshipProvider } from "@flagship.io/react-native-sdk";
 const App = () => (
   <>
     <FlagshipProvider
-      envId="{{ENV_ID}}"
-      apiKey="{{API_KEY}}"
-      visitorData={{
+      envId = "{{ENV_ID}}"
+      apiKey = "{{API_KEY}}"
+      visitorData = {{
         id: "YOUR_VISITOR_ID",
         context: {
           // some context
         },
       }}
-      enableConsoleLogs={true}
+      enableConsoleLogs = {true}
     >
       {/* [...] */}
     </FlagshipProvider>
