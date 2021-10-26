@@ -10,7 +10,7 @@ Flagship.start("{ENV_ID}}", "{{API_KEY}}");
 // Create new visitor
 var visitor = Flagship.newVisitor("YOUR_VISITOR_ID", /* context */ {});
 
-/// Synchronize
+// Synchronize
 visitor.synchronizeModifications().then((value) {
   switch (value) {
       case Status.READY:
