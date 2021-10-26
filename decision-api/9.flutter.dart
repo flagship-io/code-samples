@@ -5,7 +5,7 @@ import 'package:flagship/flagship.dart';
 //////////////////////////////
 
 // Start the SDK
-Flagship.start("{ENV_ID}}", "{{API_KEY}}");
+Flagship.start("{{ENV_ID}}", "{{API_KEY}}");
 
 // Create new visitor
 var visitor = Flagship.newVisitor("YOUR_VISITOR_ID", /* context */ {});
