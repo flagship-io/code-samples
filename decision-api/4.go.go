@@ -1,19 +1,13 @@
-body := strings.NewReader(`{
-    "visitor_id": "YOUR_VISITOR_ID",
-    "context": {
-        
-    },
-    "trigger_hit": true,
-    "decision_group": null
-}`)
-req, err := http.NewRequest("POST", "https://decision.flagship.io/v2/{{ENV_ID}}/campaigns", body)
+fsClient, err := flagship.Start("{{ENV_ID}}", "{{API_KEY}}")
 if err != nil {
-	// handle err
+	panic("error init flagship")
 }
-req.Header.Set("Content-Type", "application/json")
-req.Header.Set("X-Api-Key", "{{API_KEY}}")
-resp, err := http.DefaultClient.Do(req)
+
+// set context key/value & create visitor
+context := map[string]interface{}{}
+fsVisitor, err := fsClient.NewVisitor("{{VISITOR_ID}}", context)
 if err != nil {
-	// handle err
+	panic("error init visitor")
 }
-defer resp.Body.Close()
+
+fsVisitor.SynchronizeModifications()
