@@ -1,3 +1,6 @@
+import "github.com/flagship-io/flagship-go-sdk/v2"
+
+// init flagship
 fsClient, err := flagship.Start("{{ENV_ID}}", "{{API_KEY}}")
 if err != nil {
 	panic("error init flagship")
