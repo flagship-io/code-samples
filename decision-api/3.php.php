@@ -1,29 +1,14 @@
 <?php 
 
-$postfields = array(
-    "visitor_id" => "YOUR_VISITOR_ID",
-    "context" => array(
-        
-    ),
-    // For the Decision API to trigger a campaign activation hit, use
-    "trigger_hit" => true,
-    // Optional : see https://developers.flagship.io/docs/decision-api/v2#decision-group for more details
-    "decision_group"=> null
-);
-  
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://decision.flagship.io/v2/{{ENV_ID}}/campaigns');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postfields, JSON_FORCE_OBJECT));
-$headers = array();
-$headers[] = 'Content-Type: application/json';
-$headers[] = 'X-Api-Key: {{API_KEY}}';
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+//  Please follow the documentation in order to install and implement the Flagship PHP SDK
+//  https://developers.flagship.io/docs/sdk/php/v1.0
 
-$result = curl_exec($ch);
-if (curl_errno($ch)) {
-    echo 'Error:' . curl_error($ch);
-}
+require __DIR__ . "/vendor/autoload.php";
 
-curl_close($ch);
+use Flagship\Flagship;
+
+Flagship::start("{{ENV_ID}}", "{{API_KEY}}");
+
+$visitor = Flagship::newVisitor("YOUR_VISITOR_ID");
+
+$visitor->synchronizedModifications();
