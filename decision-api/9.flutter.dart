@@ -8,7 +8,7 @@ import 'package:flagship/flagship.dart';
 Flagship.start("{{ENV_ID}}", "{{API_KEY}}");
 
 // Create new visitor
-var visitor = Flagship.newVisitor("YOUR_VISITOR_ID", /* context */ {});
+var visitor = Flagship.newVisitor("YOUR_VISITOR_ID", /* context */ { "try": "me" });
 
 // Synchronize
 visitor.synchronizeModifications().then((value) {

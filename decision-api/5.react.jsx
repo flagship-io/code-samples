@@ -13,6 +13,7 @@ const App = () => (
         id: 'YOUR_VISITOR_ID',
         context: {
           // some context
+          try: "me"
         },
       }}
     >

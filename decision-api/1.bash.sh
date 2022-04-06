@@ -5,7 +5,7 @@ curl -X POST \
     -d '{
         "visitor_id": "YOUR_VISITOR_ID",
         "context": {
-          
+          "try": "me"
         },
         "trigger_hit": true,
         "decision_group": null

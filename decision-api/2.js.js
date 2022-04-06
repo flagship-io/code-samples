@@ -9,6 +9,7 @@ const fsVisitor = fsInstance.newVisitor({
   visitorId: "YOUR_VISITOR_ID",
   context: {
     // some context
+    try: "me"
   },
 });
 
