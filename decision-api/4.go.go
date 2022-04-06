@@ -7,7 +7,9 @@ if err != nil {
 }
 
 // set context key/value & create visitor
-context := map[string]interface{}{}
+context := map[string]interface{}{
+	"try": "me",
+}
 fsVisitor, err := fsClient.NewVisitor("{{VISITOR_ID}}", context)
 if err != nil {
 	panic("error init visitor")

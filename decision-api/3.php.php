@@ -9,6 +9,8 @@ use Flagship\Flagship;
 
 Flagship::start("{{ENV_ID}}", "{{API_KEY}}");
 
-$visitor = Flagship::newVisitor("YOUR_VISITOR_ID");
+$visitor = Flagship::newVisitor("YOUR_VISITOR_ID")
+    ->withContext(["try" => "me"])
+    ->build();
 
-$visitor->synchronizedModifications();
+$visitor->fetchFlags();

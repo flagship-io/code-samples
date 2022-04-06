@@ -2,5 +2,9 @@
 #  https://developers.flagship.io/docs/sdk/python/v2.1
 
 Flagship.instance().start({{ENV_ID}}, {{API_KEY}}, Config(mode=Config.Mode.API))
-visitor = Flagship.instance().create_visitor("YOUR_VISITOR_ID")
+context = {
+    'try':'me'
+}
+
+visitor = Flagship.instance().create_visitor("YOUR_VISITOR_ID", False, context)
 visitor.synchronize_modifications()

@@ -12,6 +12,14 @@ Flagship.sharedInstance.start(envId:"{{ENV_ID}}", apiKey:"{{API_KEY}}", visitorI
     if result == .Ready {
         
         /// Flagship is ready
+        Flagship.sharedInstance.updateContext("try", "me")
+
+        Flagship.sharedInstance.synchronizeModifications { (result) in
+
+            if result == .Updated{
+                // Use your flags here
+            }
+        }
         
     } else {
         
