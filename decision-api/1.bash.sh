@@ -7,6 +7,7 @@ curl -X POST \
         "context": {
           "try": "me"
         },
+        "visitor_consent": true,
         "trigger_hit": true,
         "decision_group": null
     }'
