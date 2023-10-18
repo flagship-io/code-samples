@@ -5,8 +5,7 @@ import 'package:flagship/flagship.dart';
 //////////////////////////////
 
 // Start the SDK
-Flagship.start(
-        "bkk9glocmjcg0vtmdlng", "DxAcxlnRB9yFBZYtLDue1q01dcXZCw6aM49CQB23");
+Flagship.start("{{ENV_ID}}", "{{API_KEY}}");
 
 // Create new visitor
 var visitor = Flagship.newVisitor("YOUR_VISITOR_ID")
@@ -14,5 +13,6 @@ var visitor = Flagship.newVisitor("YOUR_VISITOR_ID")
 
 // Fetch
 visitor.fetchFlags().whenComplete(() {
-      // Use flags
+      // Ex: get flag "myFlag". How to create a flag go to https://docs.developers.flagship.io/docs/getting-started-with-flagship#2-set-up-your-flags
+      Flag myFlag = visitor.getFlag("myFlag", "defaultValue");
     });
