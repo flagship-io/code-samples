@@ -4,26 +4,14 @@ import Flagship
 /////// Start Flagship ///////
 //////////////////////////////
 
-// By default the sdk will run under Decision Api mode
-
-// Starting the SDK
-Flagship.sharedInstance.start(envId:"{{ENV_ID}}", apiKey:"{{API_KEY}}", visitorId: "YOUR_VISITOR_ID"){ (result) in
-    
-    if result == .Ready {
+// Start SDK
+Flagship.sharedInstance.start(envId:"{{ENV_ID}}", apiKey: "{{API_KEY}}")
         
-        /// Flagship is ready
-        Flagship.sharedInstance.updateContext("try", "me")
-
-        Flagship.sharedInstance.synchronizeModifications { (result) in
-
-            if result == .Updated{
-                // Use your flags here
-            }
-        }
+// Create visitor
+let visitor = Flagship.sharedInstance.newVisitor("YOUR_VISITOR_ID").withContext(context:["try" : "me"]).build()
         
-    } else {
-        
-        /// An error occurs or the SDK is disabled
+// Fetch flags
+ visitor.fetchFlags {
+        // Ex: get flag "myFlag". To create a flag https://docs.developers.flagship.io/docs/getting-started-with-flagship#2-set-up-your-flags
+        let flag = visitor.getFlag(key: "myFlag", defaultValue: "defaultValue")
     }
-    
-}
