@@ -13,6 +13,6 @@ var visitor = Flagship.newVisitor("YOUR_VISITOR_ID")
 
 // Fetch
 visitor.fetchFlags().whenComplete(() {
-      // Ex: get flag "myFlag". How to create a flag go to https://docs.developers.flagship.io/docs/getting-started-with-flagship#2-set-up-your-flags
+      // Ex: get flag "myFlag". To create a flag https://docs.developers.flagship.io/docs/getting-started-with-flagship#2-set-up-your-flags
       Flag myFlag = visitor.getFlag("myFlag", "defaultValue");
     });
