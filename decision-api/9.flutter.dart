@@ -5,22 +5,14 @@ import 'package:flagship/flagship.dart';
 //////////////////////////////
 
 // Start the SDK
-Flagship.start("{{ENV_ID}}", "{{API_KEY}}");
+Flagship.start(
+        "bkk9glocmjcg0vtmdlng", "DxAcxlnRB9yFBZYtLDue1q01dcXZCw6aM49CQB23");
 
 // Create new visitor
-var visitor = Flagship.newVisitor("YOUR_VISITOR_ID", /* context */ { "try": "me" });
+var visitor = Flagship.newVisitor("YOUR_VISITOR_ID")
+        .withContext({"try": "me"}).build();
 
-// Synchronize
-visitor.synchronizeModifications().then((value) {
-  switch (value) {
-      case Status.READY:
-        // SDK ready & synchronized
-        break;
-      case Status.NOT_INITIALIZED:
-        // SDK Not Ready / Sdk will return default value
-        break;
-      case Status.PANIC_ON:
-         // Panic Mode activated / Sdk will return default value
-        break;
-    }
-});
+// Fetch
+visitor.fetchFlags().whenComplete(() {
+      // Use flags
+    });
